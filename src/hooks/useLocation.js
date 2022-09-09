@@ -10,6 +10,9 @@ const useLocation = () => {
             setIsLoading( true );
             const url = `https://rickandmortyapi.com/api/location/?name=${newLocation}`;
             const finalResult = await getFetch( url );
+
+            console.log( finalResult );
+
             setLocations( finalResult );
             setIsLoading(false);
             
