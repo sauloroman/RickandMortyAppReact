@@ -14,4 +14,4 @@ You can check its functionality in:
 
 ```
 https://rickandmortyappsrsn.netlify.app/
-``
+```
