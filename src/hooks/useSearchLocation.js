@@ -28,9 +28,9 @@ const useSearchLocation = ( callback ) => {
       }, [ inputValue ])
 
       useEffect( () => {
-            setInputValue('');
-            document.querySelector('.search').classList.remove('open');
             callback( selectedLocation );
+            document.querySelector('.search').classList.remove('open');
+            setInputValue('');
       }, [ selectedLocation ])
 
 

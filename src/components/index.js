@@ -4,3 +4,4 @@ export { default as Location } from './Location';
 export { default as SearchLocation } from './SearchLocation'; 
 export { default as Footer } from './Footer'; 
 export { default as Spinner } from './Spinner'; 
+export { default as Pagination } from './Pagination'; 

@@ -302,3 +302,32 @@ img {
     cursor: pointer;
     border-bottom: 1px solid currentColor;
 }
+
+/* PAGINATION */
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 5rem 0;
+}
+
+.pagination__item {
+    font-size: 2.4rem;
+    border: 1px solid currentColor;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .4s ease-out;
+}
+
+.pagination__item:hover {
+    background-color: var(--info--color);
+}
+
+.selected-page {
+    background-color: var(--font-color);
+    color: var(--main-color);
+}

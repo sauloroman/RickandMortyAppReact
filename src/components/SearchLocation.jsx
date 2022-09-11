@@ -1,8 +1,13 @@
 import useSearchLocation from "../hooks/useSearchLocation";
 
-const SearchLocation = ({ onNewLocation }) => {
+const SearchLocation = ({ setSelectedPage, onNewLocation }) => {
 
     const { inputValue, onShowSuggest, suggests, setSelectedLocation } = useSearchLocation( onNewLocation );
+
+    const onSelectedLocation = ({ target }) => {
+        setSelectedLocation( target.textContent )
+        setSelectedPage( 0 );
+    }
 
     return (
         <form 
@@ -25,7 +30,7 @@ const SearchLocation = ({ onNewLocation }) => {
                             {
                                 suggests.map( suggest => (
                                     <li 
-                                        onClick={ e => setSelectedLocation( e.target.textContent )}
+                                        onClick={ onSelectedLocation }
                                         className="suggest__item"
                                         key={suggest.id}>{ suggest.name }</li>
                                 ))

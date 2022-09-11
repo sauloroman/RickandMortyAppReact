@@ -10,12 +10,8 @@ const useLocation = () => {
             setIsLoading( true );
             const url = `https://rickandmortyapi.com/api/location/?name=${newLocation}`;
             const finalResult = await getFetch( url );
-
-            console.log( finalResult );
-
-            setLocations( finalResult );
+            setLocation( finalResult[0] );
             setIsLoading(false);
-            
       };
 
       const getLocations = async () => {
@@ -31,9 +27,7 @@ const useLocation = () => {
       }, [] );
 
       useEffect( () => {
-            if ( locations?.length ) {
-                  setLocation( locations[ getRandomNumber( locations ) ] );
-            }
+            setLocation( locations[ getRandomNumber( locations ) ] );
       }, [ locations ] )
 
       return {

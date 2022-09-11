@@ -2,22 +2,32 @@ import { Character } from "./"
 
 import image404 from '../assets/img/404.png'
 
-const CharacterGrid = ({ residents }) => {
+const CharacterGrid = ({ selectedPage }) => {
 
   const chooseGrid = () => {
     
-    if ( residents?.length ) {
+    if ( selectedPage?.length && selectedPage?.[0] ) {
+
       return ( 
         <div className="characters-grid">
-          {residents?.map( resident => (
-            <Character 
-              key={ resident }
-              url = { resident }
-            />
-          ))}
+          {
+            selectedPage?.map( resident => {
+
+              if ( resident ) {
+                return (<Character 
+                  key={ resident }
+                  url = { resident }
+                />)
+              }
+
+            }) 
+            
+          }
         </div>
       )
+
     } else {
+
       return (
         <div className="characters-no center-item">
           <img src={image404} className="image__no" alt="Rick and Morty disappointed" />
@@ -27,6 +37,7 @@ const CharacterGrid = ({ residents }) => {
           </p>
         </div>
       )
+      
     }
 
   }
