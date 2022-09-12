@@ -1,0 +1,19 @@
+@media ( max-width: 768px ) {
+
+      .location {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 3rem;
+      }
+
+      .characters-grid {
+            grid-template-columns: repeat(2, 1fr);
+      }
+}
+
+@media ( max-width: 448px ) {
+
+      .characters-grid {
+            grid-template-columns: 1fr;
+      }
+
+}

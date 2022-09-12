@@ -12,7 +12,6 @@ const RickAndMortyApp = () => {
       const [selectedPage, setSelectedPage] = useState(0);
 
       useEffect( () => {
-            console.log( location );
             setPages ( createPagination( location?.residents ) );
       }, [ location ] )
 
